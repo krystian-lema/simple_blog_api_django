@@ -22,3 +22,9 @@ class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = '__all__'
+
+class ArticleIncludeAllSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = ("id", "author", "title", "content", "comments", "tags")
+        depth = 3
